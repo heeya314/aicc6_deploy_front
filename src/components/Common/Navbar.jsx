@@ -6,7 +6,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, logout } from '../../redux/slices/authSlice';
+import { login, logout } from '../../redux/slices/authslice';
 
 const Navbar = () => {
   const path = useLocation();
