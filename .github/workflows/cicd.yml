@@ -24,13 +24,13 @@ jobs:
       - name: Push Docker Image
         run: docker push snagheepark/vite_app_test_hub:latest
 
-deploy:
-  needs: build
-  runs-on: aws-ec2
-  steps:
-    - name: Pull image from docker hub
-      run: docker pull snagheepark/vite_app_test_hub:latest
-    - name: Delete Existing Container
-      run: docker rm -f task-container
-    - name: Run Docker Container
-      run: docker run -d -p 80:80 --name task-container snagheepark/vite_app_test_hub
+  deploy:
+    needs: build
+    runs-on: aws-ec2
+    steps:
+      - name: Pull image from docker hub
+        run: docker pull snagheepark/vite_app_test_hub:latest
+      - name: Delete Existing Container
+        run: docker rm -f task-container
+      - name: Run Docker Container
+        run: docker run -d -p 80:80 --name task-container snagheepark/vite_app_test_hub
